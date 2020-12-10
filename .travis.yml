@@ -36,8 +36,7 @@ before_script:
 
 script:
     # Standard Go testing avoiding the testing of the vendor folder.
-    #- go vet $(go list ./... | grep -v '/vendor/')
-    #- go test -v $(go list ./... | grep -v '/vendor/')
+
 
     # Build disabling CGO and getting a statically linked binary.
     - GOOS=linux go build -a -tags netgo -ldflags '-s -w' -o $TF_DOWNLOAD_PATH/linux/$BUILDNAME
